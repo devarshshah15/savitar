@@ -2,9 +2,13 @@ name: Lint
 
 on: [push]
 
+
+
 jobs:
   eslint:
     runs-on: ubuntu-latest
     steps:
+      - name: Run a one-line script
+        run: npm install --global eslint-config-standard
       - uses: actions/checkout@v1
       - uses: stefanoeb/eslint-action@1.0.2

@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: install eslint
-        run: sudo npm install --global eslint-config-standard
+        run: sudo npm install --save-dev eslint-config-standard eslint-plugin-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node
       - uses: actions/checkout@v1
       - uses: stefanoeb/eslint-action@1.0.2

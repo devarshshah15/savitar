@@ -1,3 +1,4 @@
+var exp = 0;
 const generateBadge = (color, label, value) => {
     let badgeDiv = document.createElement("div");
     badgeDiv.setAttribute("id", label);
@@ -39,7 +40,7 @@ const generateBadge = (color, label, value) => {
 }
 
 const getExperience = (text) => {
-    return "3 years";
+    return exp;
 }
 
 const getSponsorship = (text) => {
@@ -51,8 +52,18 @@ function getElementByXpath(path) {
 }
 
 const text = document.getElementsByTagName("article")[0].textContent;
+var list = text.split(".");
+var arrayLength = list.length;
+for (var i = 0; i < arrayLength; i++) {
+	if (list[i].includes("experience")){
+		if (list[i].match(/\d+/g) != null){
+		var exp = list[i].match(/\d+/g).map(Number);
+		}
+	}
+}
 
-let parentDiv = getElementByXpath("/html/body/div[8]/div[3]/div/div[1]/div[1]/div/div[1]/div/section/div[2]/div[1]");
+let parentDiv = getElementByXpath("/html/body/div[7]/div[3]/div/div[1]/div[1]/div/div[1]/div/section/div[3]/article");
+
 
 const experienceBadge = generateBadge("#44cc11", "experience", getExperience(text));
 const sponsorshipBadge = generateBadge("#00aadd", "sponsorship", getSponsorship(text));

@@ -1,5 +1,18 @@
 addons:
   chrome: stable
 
+sudo: false
+language: javasript
+branches:
+  only:
+    - master
+cache:
+  directories:
+    - node_modules
+before_install:
+  - npm update
+install:
+  - npm install
 script:
+  - npm test
   - echo "Add script to pack chrome extension"

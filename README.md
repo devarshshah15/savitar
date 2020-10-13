@@ -4,14 +4,14 @@
 # Savitar - A user-friendly jobs filter extension for LinkedIn [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Do%20you%20plan%20to%20improve%20your%20job%20searches%20on%20LinkedIn%3F%20Look%20no%20further.%20Savitar%20is%20the%20right%20extension%20for%20the%20job.%20Use%20it!%20Tweet%20it!%20Enjoy%20it!%20&hashtags=LinkedIn%20feature%20recommendations%20%20&url=https%3A%2F%2Fgithub.com%2Fpushkardravid%2Fsavitar%2F%20)
 
 <p align="center">
-<img src = "https://img.shields.io/github/license/pushkardravid/savitar">
-<img src = "https://img.shields.io/github/issues-raw/pushkardravid/savitar">
-<img src = "https://img.shields.io/github/issues-closed-raw/pushkardravid/savitar">
-<img src = "https://img.shields.io/github/issues-pr/pushkardravid/savitar">
-<img src = "https://img.shields.io/github/last-commit/pushkardravid/savitar">
-<img src = "https://img.shields.io/github/release-date/pushkardravid/savitar">
+<img src = "https://img.shields.io/github/license/ultraultimated/savitar">
+<img src = "https://img.shields.io/github/issues-raw/ultraultimated/savitar">
+<img src = "https://img.shields.io/github/issues-closed-raw/ultraultimated/savitar">
+<img src = "https://img.shields.io/github/issues-pr/ultraultimated/savitar">
+<img src = "https://img.shields.io/github/last-commit/ultraultimated/savitar">
+<img src = "https://img.shields.io/github/release-date/ultraultimated/savitar">
 <img src = "https://img.shields.io/youtube/views/aRedmJN3bUc?style=social">
-<img src = "https://img.shields.io/github/contributors/pushkardravid/savitar">
+<img src = "https://img.shields.io/github/contributors/ultraultimated/savitar">
 </p>
 
 ---
@@ -45,4 +45,4 @@ We all know, how challenging it is to find the job that meets all your expectati
 * Expanding the scope of the project to other portals such as Indeed, Monster.com etc. for the best possible user experience and time saving. 
 
 ## License
-<img src = "https://img.shields.io/github/license/pushkardravid/savitar">
+<img src = "https://img.shields.io/github/license/ultraultimated/savitar">

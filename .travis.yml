@@ -2,7 +2,9 @@ addons:
   chrome: stable
 
 sudo: false
-language: javascript
+language: node_js
+node_js:
+  - 12
 branches:
   only:
     - master

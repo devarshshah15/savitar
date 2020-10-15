@@ -26,7 +26,6 @@ const generateBadge = (color, label, value) => {
                       border-bottom-right-radius: .25em;
                       display: inline-block;
                       float: left;
-                      text-transform: lowercase;
                       color: #FFF;
                       text-shadow: 0px 0.1em 0px rgba(0, 0, 0, 0.5);
                       margin: 0;
@@ -47,6 +46,17 @@ const getSponsorship = (text) => {
     return "Yes";
 }
 
+const getLocation = () => {
+    let body = document.body.innerText;
+    let start = body.indexOf("Company Location");
+    let string = body.substring(start, start+45);
+    let list = string.split(" ");
+    let location_list = list.slice(2,4);
+    let temp_location = location_list.join().replace(',',"").split("\n")[0];
+    let location  = temp_location.charAt(0).toUpperCase() + temp_location.slice(1);
+    return location;
+}
+
 function getElementByXpath(path) {
     return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 }
@@ -64,12 +74,14 @@ for (var i = 0; i < arrayLength; i++) {
 
 let parentDiv = getElementByXpath("/html/body/div[7]/div[3]/div/div[1]/div[1]/div/div[1]/div/section/div[3]/article");
 
-
 const experienceBadge = generateBadge("#44cc11", "experience", getExperience(text));
 const sponsorshipBadge = generateBadge("#00aadd", "sponsorship", getSponsorship(text));
+const locationBadge = generateBadge("#12ee00", "Location", getLocation());
+
 const badges = {
     experience: experienceBadge,
-    sponsorship: sponsorshipBadge
+    sponsorship: sponsorshipBadge,
+    location: locationBadge
 };
 
 chrome.runtime.onMessage.addListener(newMessage);

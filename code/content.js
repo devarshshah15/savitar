@@ -53,8 +53,7 @@ const getLocation = () => {
     let list = string.split(" ");
     let location_list = list.slice(2,4);
     let temp_location = location_list.join().replace(',',"").split("\n")[0];
-    let location  = temp_location.charAt(0).toUpperCase() + temp_location.slice(1);
-    return location;
+    return temp_location.charAt(0).toUpperCase() + temp_location.slice(1);
 }
 
 function getElementByXpath(path) {
@@ -67,7 +66,7 @@ var arrayLength = list.length;
 for (var i = 0; i < arrayLength; i++) {
 	if (list[i].includes("experience")){
 		if (list[i].match(/\d+/g) != null){
-		var exp = list[i].match(/\d+/g).map(Number);
+		    exp = list[i].match(/\d+/g).map(Number);
 		}
 	}
 }

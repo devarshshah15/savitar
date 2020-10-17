@@ -4,9 +4,10 @@
 
 [Styleguides](#styleguides)
   * [Git Commit Messages](#git-commit-messages)
+  * [Raise a Pull Request](#raise-a-pull-request)
   * [JavaScript Styleguide](#javascript-styleguide)
   * [HTML Styleguide](#html-styleguide)
-
+  
 
 ## Code of Conduct
 
@@ -18,12 +19,23 @@ Please follow these steps to have your contribution considered by the maintainer
 
 ### Git Commit Messages
 
+* Add the issue number in your commit messages
+    ```
+        git commit -m "<your message> #issue_number"
+    ```
 * Use the present tense ("Add feature" not "Added feature")
 * Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
 * Limit the first line to 72 characters or less
 * Reference issues and pull requests liberally after the first line
 * When only changing documentation, include `[ci skip]` in the commit title
 * Attach issue id in the commit message for easier tracking
+
+### Raise a Pull Request
+* Raise a pull request to be merged with meaningful name.
+* Using the issue name may be a good option.
+* Refer the issue numbers in the description of the request. (Use #issue_number to reference the issue)
+* For example see [#28](https://github.com/ultraultimated/savitar/pull/28)
+
 
 ### JavaScript Styleguide
 

@@ -10,7 +10,7 @@
 
 ## Code of Conduct
 
-All developers contributing to this project abide by the [Code of Conduct](CODE_OF_CONDUCT.md) defined for this project. Violations should be reported at  [pushkarsdravid@gmail.com](mailto:pushkarsdravid@gmail.com).
+All developers contributing to this project abide by the [Code of Conduct](CODE_OF_CONDUCT.md) defined for this project. Violations should be reported at  [neelp1543@gmail.com](mailto:neelp1543@gmail.com).
 Please follow these steps to have your contribution considered by the maintainers:
 
 

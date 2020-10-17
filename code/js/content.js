@@ -1,6 +1,5 @@
 const ner = require('wink-ner')
 const winkTokenizer = require('wink-tokenizer')
-
 function getNer (text) {
   const trainingData = [
     { text: 'Python', entityType: 'Language' },
@@ -57,14 +56,12 @@ function getNer (text) {
     { text: 'kotlin', entityType: 'Language' },
     { text: 'julia', entityType: 'Language' },
     { text: 'prolog', entityType: 'Language' }]
-
   console.log(text)
   const myNER = ner()
   myNER.learn(trainingData)
   const { tokenize } = winkTokenizer()
   let tokens = tokenize(text)
   tokens = myNER.recognize(tokens)
-
   const res = []
   for (let i = 0; i < tokens.length; i++) {
     if (tokens[i].entityType === 'Language') {
@@ -112,15 +109,12 @@ const generateBadge = (color, label, value) => {
   badgeDiv.appendChild(valueDiv)
   return badgeDiv
 }
-
 const getExperience = (text) => {
   return exp
 }
-
 const getSponsorship = (text) => {
   return 'Yes'
 }
-
 const getLocation = () => {
   const body = document.body.innerText
   const start = body.indexOf('Company Location')
@@ -131,11 +125,9 @@ const getLocation = () => {
   const tempLocation = locationList.join().replace(',', '').split('\n')[0]
   return tempLocation.charAt(0).toUpperCase() + tempLocation.slice(1)
 }
-
 function getElementByXpath (path) {
   return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
 }
-
 const text = document.getElementsByTagName('article')[0].textContent
 var list = text.split('.')
 var arrayLength = list.length
@@ -144,26 +136,20 @@ for (var i = 0; i < arrayLength; i++) {
     exp = list[i].match(/\d+/g).map(Number)
   }
 }
-
-const parentDiv = getElementByXpath('/html/body/div[7]/div[3]/div/div[1]/div[1]/div/div[1]/div/section/div[3]/article')
-
+const parentDiv = getElementByXpath('/html/body/div[8]/div[3]/div/div[1]/div[1]/div/div[1]/div/section/div[3]/article')
 const experienceBadge = generateBadge('#44cc11', 'experience', getExperience(text))
 const sponsorshipBadge = generateBadge('#00aadd', 'sponsorship', getSponsorship(text))
 const locationBadge = generateBadge('#12ee00', 'Location', getLocation())
-
 const badges = {
   experience: experienceBadge,
   sponsorship: sponsorshipBadge,
   location: locationBadge
 }
-
 // eslint-disable-next-line no-undef
 chrome.runtime.onMessage.addListener(newMessage)
-
 function newMessage (message, sender, sendResponse) {
   resetBadges(message)
 }
-
 function resetBadges (message) {
   for (const badge in message) {
     const badgeElement = document.getElementById(badge)
@@ -178,3 +164,4 @@ function resetBadges (message) {
     }
   }
 }
+console.log(getNer(text))

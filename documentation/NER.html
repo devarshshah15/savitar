@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: NER</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: NER</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>NER</h2>
+        
+            <div class="class-description">NER class</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="wink-ner.js.html">wink-ner.js</a>, <a href="wink-ner.js.html#line45">line 45</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="defineConfig"><span class="type-signature"></span>defineConfig<span class="signature">(config)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Defines the criteria to ignore one or more
+[**tokens**](http://winkjs.org/wink-tokenizer/) during entity detection.
+The criteria is specified in terms of array of specific **tags** and/or **values**
+to ignore; this means if any of the listed tag or value is found in a token,
+it is ignored and it’s value is not considered during entity recognition.
+
+For example by including `punctuation`  in the array of tags to ignore,
+tokens containing punctuations like `-` or `.` will be skipped. This will
+result in recognition of **kg** and **k.g.** as **kg** (kilogram symbol)
+or **Guinea-Bissau** and **Guinea Bissau** as **Guinea-Bissau**
+(a country in West Africa).
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>config</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">— defines the `values` and/or `tags` to be ignore
+during entity detection. Note if the match occurs in any one of the array,
+the token is ignored.
+
+*An empty config object is equivalent to setting default configuration.*
+
+The table below details the properties of `config` object:
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>valuesToIgnore</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">contains **values**
+to be ignored.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tagsToIgnore</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    [ 'punctuation' ]
+                
+                </td>
+            
+
+            <td class="description last">contains **tags**
+to be ignored. Duplicate and invaid tags, if any, are ignored.
+Note: `number` and `word` tags can never be ignored.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ignoreDiacritics</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+
+            <td class="description last">a `true` ensures that diacritic
+marks are ignored, whereas `false` will ensure that they are not ignored.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="wink-ner.js.html">wink-ner.js</a>, <a href="wink-ner.js.html#line66">line 66</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if `valuesToIgnore` is not an array of strings.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if `tagsToIgnore` is not an array of strings.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    a copy of configuration defined.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// Do not ignore anything!
+myNER.defineConfig( { tagsToIgnore: [], ignoreDiacritics: false } );
+// -> { tagsToIgnore: [], valuesToIgnore: [], ignoreDiacritics: false }
+
+// Ignore only '-' and '.'
+myNER.defineConfig( {
+  tagsToIgnore: [],
+  valuesToIgnore: [ '-', '.' ],
+  ignoreDiacritics: false
+} );
+// -> {
+//      tagsToIgnore: [],
+//      valuesToIgnore: [ '-', '.' ],
+//      ignoreDiacritics: false
+//    }</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="exportJSON"><span class="type-signature"></span>exportJSON<span class="signature">()</span><span class="type-signature"> &rarr; {json}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Exports the JSON of the learnings generated by `learn()`, which may be
+saved in a file that may be used later for NER purpose.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="wink-ner.js.html">wink-ner.js</a>, <a href="wink-ner.js.html#line616">line 616</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    of the learnings.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">json</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var learnings = myNER.exportJSON();</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="importJSON"><span class="type-signature"></span>importJSON<span class="signature">(json)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Imports the ner learnings from an already exported ner learnings via the
+[`exportJSON()`](#exportjson).
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>json</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">json</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">— containg an earlier exported learnings in JSON format.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="wink-ner.js.html">wink-ner.js</a>, <a href="wink-ner.js.html#line640">line 640</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if invalid JSON is encountered.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    always `true`.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var myNER = ner();
+// Assuming that `json` has valid learnings.
+myNER.importJSON( json );</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="learn"><span class="type-signature"></span>learn<span class="signature">(entities)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Learns the entities that must be detected via `recognize()/predict()` API
+calls in a sentence that has been already tokenized either using
+[wink-tokenizer](https://www.npmjs.com/package/wink-tokenizer) or follows
+it's token format.
+
+It can be used to learn or update learnings incrementally; but it can not be
+used to unlearn or delete one or more entities.
+
+If duplicate entity definitions are enountered then all the entries except
+the **last one** are ignored.
+
+Acronyms must be added with space between each character; for example USA
+should be added as `'u s a'` — this ensure correct detection of
+`U S A` or `U. S. A.` or `U.S.A.` as `USA` \[Refer to the example below\].
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>entities</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;object></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">— where each element defines an entity via
+two mandatory properties viz. `text` and `entityType` as described later.
+Note if an element is *not an object* or *does not contain the mandatory
+properties,* it is ignored.
+
+In addition to these two properties, you may optionally define two more
+properties viz. `uid` and `value`, as described in the table below.
+
+<b>Note:</b> Apart from the above mentioned properties, you may also define additional properties .
+Such properties, along with their values, will be copied to the output token as-is for consumption
+by any down stream code in the NLP pipe. An example use-case is pos tagging.
+You can define **pos** property in an entity defition as
+`{ text: 'manchester united', entityType: 'club', pos: 'NNP' }`.
+The [wink-pos-tagger](https://www.npmjs.com/package/wink-pos-tagger) will
+automatically use the `pos` property (if available) to ensure correct
+tagging in your context by overriding its algorithm.
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>text</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">that must be detected as entity and may
+consist of more than one word; for example, **`India`** or **`United Kindom.`**</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>entityType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">type of the entity; for example
+**`country`**</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>uid</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">unique id for the entity; example
+usecase of `uid` is using it to access more properties of the entity from a
+database. If it is `undefined` then it is automatically generated by joining
+the key words of the detected entity by underscore (_). For example, `'india'`
+or `'united_kingdom'.`</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">that is assigned to the value
+property of the token; if `undefined` then it is equal to the **value**
+of the token in case of uni-word entities; for multi-word entities, it is
+generated automatically by joining the key words of the entries by space
+character. For example, `'india'` or `'united kingdom'.`</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="wink-ner.js.html">wink-ner.js</a>, <a href="wink-ner.js.html#line284">line 284</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    of actual entities learned.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var trainingData = [
+  { text: 'manchester united', entityType: 'club', uid: 'manu' },
+  { text: 'manchester', entityType: 'city' },
+  { text: 'U K', entityType: 'country', uid: 'uk' }
+];
+myNER.learn( trainingData );
+// -> 3</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="recognize"><span class="type-signature"></span>recognize<span class="signature">(tokens)</span><span class="type-signature"> &rarr; {Array.&lt;object>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Recognizes entities in the input `tokens.` Any token(s), which is recognized
+as an entity, will automatically receive the properties that have been defined
+for the *detected entity* using [`learn()`](#learn). If a set of tokens together
+are recognized as a single entity, then they are merged in to a single
+token; the merged tokens `value` property becomes the concatenation of all
+the `values` from merged tokens, separated by space.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>tokens</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;object></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">— tokenized either using
+[wink-tokenizer](https://www.npmjs.com/package/wink-tokenizer) or follow
+it's standards.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="wink-ner.js.html">wink-ner.js</a>, <a href="wink-ner.js.html#line472">line 472</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    of updated `tokens` with entities tagged.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;object></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// Use wink tokenizer.
+var winkTokenizer = require( 'wink-tokenizer' );
+// Instantiate it and use tokenize() api.
+var tokenize = winkTokenizer().tokenize;
+var tokens = tokenize( 'Manchester United is a professional football club based in Manchester, U. K.' )
+// Detect entities.
+myNER.recognize( tokens );
+// -> [
+//      { entityType: 'club', uid: 'manu', originalSeq: [ 'Manchester', 'United' ], value: 'manchester united', tag: 'word' },
+//      { value: 'is', tag: 'word' },
+//      { value: 'a', tag: 'word' },
+//      { value: 'professional', tag: 'word' },
+//      { value: 'football', tag: 'word' },
+//      { value: 'club', tag: 'word' },
+//      { value: 'based', tag: 'word' },
+//      { value: 'in', tag: 'word' },
+//      { value: 'Manchester', tag: 'word', originalSeq: [ 'Manchester' ], uid: 'manchester', entityType: 'city' },
+//      { value: ',', tag: 'punctuation' },
+//      { entityType: 'country', uid: 'uk', originalSeq: [ 'U', '.', 'K' ], value: 'u k', tag: 'word' },
+//      { value: '.', tag: 'punctuation' }
+//    ]</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="reset"><span class="type-signature"></span>reset<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Resets the named entity recognizer by re-initializing all the learnings and
+by setting the configuration to default.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="wink-ner.js.html">wink-ner.js</a>, <a href="wink-ner.js.html#line599">line 599</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    always true.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>myNER.reset( );
+// -> true</code></pre>
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="NER.html">NER</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ner">ner</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sat Oct 17 2020 16:41:27 GMT-0400 (Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

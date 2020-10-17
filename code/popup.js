@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!chrome.runtime.error) {
             message = items.data
             for (const badge in message) {
-                document.getElementById(badge).checked = message[badge].checked
+                if(document.getElementById(badge) != null)
+                    document.getElementById(badge).checked = message[badge].checked
             }
             chrome.tabs.query(params, gotTabs)
         }

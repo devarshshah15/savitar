@@ -136,7 +136,7 @@ for (var i = 0; i < arrayLength; i++) {
     exp = list[i].match(/\d+/g).map(Number)
   }
 }
-const parentDiv = getElementByXpath('/html/body/div[8]/div[3]/div/div[1]/div[1]/div/div[1]/div/section/div[3]/article')
+const parentDiv = getElementByXpath('/html/body/div[7]/div[3]/div/div[1]/div[1]/div/div[1]/div/section/div[3]/article')
 const experienceBadge = generateBadge('#44cc11', 'experience', getExperience(text))
 const sponsorshipBadge = generateBadge('#00aadd', 'sponsorship', getSponsorship(text))
 const locationBadge = generateBadge('#12ee00', 'Location', getLocation())

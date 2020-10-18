@@ -1,6 +1,13 @@
 const ner = require('wink-ner')
 const winkTokenizer = require('wink-tokenizer')
+
 function getNer (text) {
+  /**
+     * Function to get skills from the text using wink-ner library
+     * Uses training data defined below to train the model and then recognize the skills mentioned inside text
+     * INPUT - Content inside article tag
+     * OUTPUT - list of skills in that article
+     */
   const trainingData = [
     { text: 'Python', entityType: 'Language' },
     { text: 'Java', entityType: 'Language' },
@@ -56,22 +63,31 @@ function getNer (text) {
     { text: 'kotlin', entityType: 'Language' },
     { text: 'julia', entityType: 'Language' },
     { text: 'prolog', entityType: 'Language' }]
+  // text is content inside article tag
   console.log(text)
   const myNER = ner()
   myNER.learn(trainingData)
   const { tokenize } = winkTokenizer()
   let tokens = tokenize(text)
   tokens = myNER.recognize(tokens)
-  const res = []
+
+  let result = []
   for (let i = 0; i < tokens.length; i++) {
     if (tokens[i].entityType === 'Language') {
-      res.push(tokens[i].value)
+      result.push(tokens[i].value)
     }
   }
-  return res.join()
+  // create set of skills to avoid duplicate entries
+  result = new Set(result)
+  return Array.from(result).join(' ')
 }
-var exp = 0
+
 const generateBadge = (color, label, value) => {
+  /**
+   * Function to get generate badges for extension
+   * INPUT - color of that Badge content, lable and value to display
+   * OUTPUT - Badge with all properties and content
+   */
   const badgeDiv = document.createElement('div')
   badgeDiv.setAttribute('id', label)
   badgeDiv.style = `display: inline-block;
@@ -110,12 +126,32 @@ const generateBadge = (color, label, value) => {
   return badgeDiv
 }
 const getExperience = (text) => {
-  return exp
+  /**
+   * Function to fetch years of experience information from the text
+   * INPUT - Content inside article tag
+   * OUTPUT - value represents year of experience
+   */
+  let exp = 0
+  const list = text.split('.')
+  const arrayLength = list.length
+  for (let i = 0; i < arrayLength; i++) {
+    if (list[i].includes('experience') && list[i].match(/\d+/g) != null) {
+      exp = list[i].match(/\d+/g).map(Number)
+    }
+  }
+  return exp[0]
 }
 const getSponsorship = (text) => {
+  const list = text.split('.')
+  const start = text.indexOf('Sponsorship')
   return 'Yes'
 }
 const getLocation = () => {
+/**
+ * Function to get location of job posted
+ * INPUT - void
+ * OUTPUT - location (city and state) of that job posted
+ */
   const body = document.body.innerText
   const start = body.indexOf('Company Location')
   const string = body.substring(start, start + 45)
@@ -129,22 +165,20 @@ function getElementByXpath (path) {
   return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
 }
 const text = document.getElementsByTagName('article')[0].textContent
-var list = text.split('.')
-var arrayLength = list.length
-for (var i = 0; i < arrayLength; i++) {
-  if (list[i].includes('experience') && list[i].match(/\d+/g) != null) {
-    exp = list[i].match(/\d+/g).map(Number)
-  }
-}
+
 const parentDiv = getElementByXpath('/html/body/div[7]/div[3]/div/div[1]/div[1]/div/div[1]/div/section/div[3]/article')
 const experienceBadge = generateBadge('#44cc11', 'experience', getExperience(text))
 const sponsorshipBadge = generateBadge('#00aadd', 'sponsorship', getSponsorship(text))
-const locationBadge = generateBadge('#12ee00', 'Location', getLocation())
+const locationBadge = generateBadge('#12ee00', 'location', getLocation())
+const skillsBadge = generateBadge('#00aaff', 'skills', getNer(text))
+
 const badges = {
   experience: experienceBadge,
   sponsorship: sponsorshipBadge,
-  location: locationBadge
+  location: locationBadge,
+  skills: skillsBadge
 }
+
 // eslint-disable-next-line no-undef
 chrome.runtime.onMessage.addListener(newMessage)
 function newMessage (message, sender, sendResponse) {

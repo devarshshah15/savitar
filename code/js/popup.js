@@ -1,9 +1,9 @@
-var params = {
+let params = {
   active: true,
   currentWindow: true
 }
 
-var message = {
+let message = {
   experience: {
     checked: true
   },
@@ -11,6 +11,9 @@ var message = {
     checked: true
   },
   location: {
+    checked: true
+  },
+  skills: {
     checked: true
   }
 }
@@ -30,6 +33,7 @@ function gotTabs (tabs) {
   chrome.tabs.sendMessage(tabs[0].id, message)
 }
 
+// eslint-disable-next-line no-unused-vars
 function toggle (event) {
   const badge = event.target.id
   message[badge].checked = event.target.checked
@@ -44,7 +48,7 @@ function toggle (event) {
 
 document.addEventListener('DOMContentLoaded', function () {
   const checkboxes = document.getElementsByTagName('input')
-  for (var i = 0; i < checkboxes.length; i++) {
+  for (let i = 0; i < checkboxes.length; i++) {
     checkboxes[i].addEventListener('change', function (event) {
       var params = {
         active: true,
@@ -60,14 +64,19 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         location: {
           checked: true
+        },
+        skills: {
+          checked: true
         }
       }
       const badge = event.target.id
       message[badge].checked = event.target.checked
 
+      // eslint-disable-next-line no-undef
       chrome.tabs.query(params, gotTabs)
 
       chrome.storage.sync.set({ data: message }, function () {
+        // eslint-disable-next-line no-undef
         if (chrome.runtime.error) {
           console.log('Runtime error.')
         }

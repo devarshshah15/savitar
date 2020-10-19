@@ -45,4 +45,4 @@ We all know, how challenging it is to find the job that meets all your expectati
 * Expanding the scope of the project to other portals such as Indeed, Monster.com etc. for the best possible user experience and time saving. 
 
 ## License
-<img src = "https://img.shields.io/github/license/ultraultimated/savitar">
+[MIT License](https://github.com/ultraultimated/savitar/blob/master/LICENSE.md)

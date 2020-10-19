@@ -27,7 +27,7 @@ We all know, how challenging it is to find the job that meets all your expectati
 
 # Project Video
 
-[![Savitar pitch](https://img.youtube.com/vi/MzrnkkrZ8c4/0.jpg)](https://youtu.be/MzrnkkrZ8c4)
+[![Savitar pitch](https://img.youtube.com/vi/EbdN5pDlpLA/0.jpg)](https://www.youtube.com/watch?v=EbdN5pDlpLA)
 
 # Project Stages
 

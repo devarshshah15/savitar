@@ -85,7 +85,7 @@ All HTML must adhere to [HTML Standard Style](https://google.github.io/styleguid
 
 
 ### JS DOC Styleguide
-
+* Learn more about JS Doc style guide [here.](https://jsdoc.app/about-getting-started.html)
 * Document every JavaScript function by adding JSDoc comments above the function definition with the following tags:
     * @summary can use Markdown here
     * @param {type} name description, use [] square brackets around param for optional params

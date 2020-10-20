@@ -82,3 +82,29 @@ All HTML must adhere to [HTML Standard Style](https://google.github.io/styleguid
 * Separate structure from presentation from behavior.
 * Do not use entity references.
 * Use a new line for every block, list, or table element, and indent every such child element.
+
+
+### JS DOC Styleguide
+* Learn more about JS Doc style guide [here.](https://jsdoc.app/about-getting-started.html)
+* Document every JavaScript function by adding JSDoc comments above the function definition with the following tags:
+    * @summary can use Markdown here
+    * @param {type} name description, use [] square brackets around param for optional params
+    * @return {type} name description, or @return {undefined}
+* Functions use the following comment style in JSDoc:
+    ```
+    /**
+    Takes 2 numbers and returns their sum.
+    @param   {number} a     the first number
+    @param   {number} b     the second number
+    @param   {number} [c=0] the optional third number
+    
+    @returns {number} the sum of a and b
+    */
+    function addNumbers(a, b, c) {
+    if (typeof c === "undefined") {
+        c = 0;
+    }
+    return a + b + c;
+    }
+    ```
+

@@ -166,7 +166,7 @@ function getElementByXpath (path) {
 }
 const text = document.getElementsByTagName('article')[0].textContent
 
-const parentDiv = getElementByXpath('/html/body/div[7]/div[3]/div/div[1]/div[1]/div/div[1]/div/section/div[3]/article')
+const parentDiv = getElementByXpath('/html/body/div[8]/div[3]/div/div[1]/div[1]/div/div[1]/div/section/div[2]/div[1]')
 const experienceBadge = generateBadge('#44cc11', 'experience', getExperience(text))
 const sponsorshipBadge = generateBadge('#00aadd', 'sponsorship', getSponsorship(text))
 const locationBadge = generateBadge('#12ee00', 'location', getLocation())

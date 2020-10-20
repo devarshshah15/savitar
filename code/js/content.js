@@ -146,13 +146,12 @@ const getSponsorship = (text) => {
   const start = text.indexOf('Sponsorship')
   return 'Yes'
 }
-const getLocation = () => {
+const getLocation = (body) => {
 /**
  * Function to get location of job posted
  * INPUT - void
  * OUTPUT - location (city and state) of that job posted
  */
-  const body = document.body.innerText
   const start = body.indexOf('Company Location')
   const string = body.substring(start, start + 45)
   const list = string.split(' ')
@@ -165,11 +164,11 @@ function getElementByXpath (path) {
   return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
 }
 const text = document.getElementsByTagName('article')[0].textContent
-
-const parentDiv = getElementByXpath('/html/body/div[8]/div[3]/div/div[1]/div[1]/div/div[1]/div/section/div[2]/div[1]')
+const textBody = document.body.innerText
+const parentDiv = getElementByXpath('/html/body/div[7]/div[3]/div/div[1]/div[1]/div/div[1]/div/section/div[3]/article')
 const experienceBadge = generateBadge('#44cc11', 'experience', getExperience(text))
 const sponsorshipBadge = generateBadge('#00aadd', 'sponsorship', getSponsorship(text))
-const locationBadge = generateBadge('#12ee00', 'location', getLocation())
+const locationBadge = generateBadge('#12ee00', 'location', getLocation(textBody))
 const skillsBadge = generateBadge('#00aaff', 'skills', getNer(text))
 
 const badges = {

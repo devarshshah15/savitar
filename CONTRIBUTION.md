@@ -35,6 +35,7 @@ Please follow these steps to have your contribution considered by the maintainer
 * Using the issue name may be a good option.
 * Refer the issue numbers in the description of the request. (Use #issue_number to reference the issue)
 * For example see [#28](https://github.com/ultraultimated/savitar/pull/28)
+* Pull request must be approved by 2 or more reviewers before being merged into master.
 
 
 ### JavaScript Styleguide

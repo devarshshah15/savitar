@@ -35,14 +35,17 @@ We all know, how challenging it is to find the job that meets all your expectati
 * Completed integrating the Chrome extension with LinkedIn.
 * Temporary filters put in place based on candidate requirements which highlight the presence of the required job components. 
 
-## Part 2 Requirements 
-* Setting up a named entity recognition REST sevice which accounts for the fields such as, "Years of experience", "Sponsorship", "Domain", etc. 
-* Expanding the scope of LinkedIn badges to derive several other key insights required by a job seeking candidate. These can range from salary based filters to identifying the location specific jobs.
+## Part 2 Overview 
+* Completed integrating features such as "Location", "Years of Experience" by parsing and extracting the fields from job description.
+* Integrated the feature of 'Skills' using Named Entity Recognition.
+* Represented the new features as badges in the job posting description. 
+.
 
 ## Part 3 Requirements
 * Incorporating notification based services for jobs searched by the candidate and setting triggers for job alerts. 
 * Fulfill all requirements related to deployment of the extension to Chrome store.
 * Expanding the scope of the project to other portals such as Indeed, Monster.com etc. for the best possible user experience and time saving. 
+* Integrate more features such as GPA Required, Eligibility criteria, Personalized job profile etc.
 
 ## License
 [MIT License](https://github.com/ultraultimated/savitar/blob/master/LICENSE.md)

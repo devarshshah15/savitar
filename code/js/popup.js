@@ -1,4 +1,4 @@
-let params = {
+const params = {
   active: true,
   currentWindow: true
 }
@@ -18,18 +18,22 @@ let message = {
   }
 }
 document.addEventListener('DOMContentLoaded', function () {
+  // eslint-disable-next-line no-undef
   chrome.storage.sync.get('data', function (items) {
+    // eslint-disable-next-line no-undef
     if (!chrome.runtime.error) {
       message = items.data
       for (const badge in message) {
         if (document.getElementById(badge) != null) { document.getElementById(badge).checked = message[badge].checked }
       }
+      // eslint-disable-next-line no-undef
       chrome.tabs.query(params, gotTabs)
     }
   })
 }, false)
 
 function gotTabs (tabs) {
+  // eslint-disable-next-line no-undef
   chrome.tabs.sendMessage(tabs[0].id, message)
 }
 
@@ -37,9 +41,12 @@ function gotTabs (tabs) {
 function toggle (event) {
   const badge = event.target.id
   message[badge].checked = event.target.checked
+  // eslint-disable-next-line no-undef
   chrome.tabs.query(params, gotTabs)
 
+  // eslint-disable-next-line no-undef
   chrome.storage.sync.set({ data: message }, function () {
+    // eslint-disable-next-line no-undef
     if (chrome.runtime.error) {
       console.log('Runtime error.')
     }
@@ -75,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // eslint-disable-next-line no-undef
       chrome.tabs.query(params, gotTabs)
 
+      // eslint-disable-next-line no-undef
       chrome.storage.sync.set({ data: message }, function () {
         // eslint-disable-next-line no-undef
         if (chrome.runtime.error) {

@@ -142,8 +142,8 @@ const getExperience = (text) => {
   return exp[0]
 }
 const getSponsorship = (text) => {
-  const list = text.split('.')
-  const start = text.indexOf('Sponsorship')
+  // const list = text.split('.')
+  // const start = text.indexOf('Sponsorship')
   return 'Yes'
 }
 const getLocation = () => {

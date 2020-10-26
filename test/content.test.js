@@ -12,26 +12,26 @@ div8.appendChild(dom.window.document.createElement('div'))
 div8.appendChild(dom.window.document.createElement('div'))
 const div3 = div8.appendChild(dom.window.document.createElement('div'))
 // eslint-disable-next-line camelcase
-const div1_3 = div3.appendChild(dom.window.document.createElement('div'))
+const divOneThree = div3.appendChild(dom.window.document.createElement('div'))
 // eslint-disable-next-line camelcase
-const div_1_1_3 = div1_3.appendChild(dom.window.document.createElement('div'))
-div1_3.appendChild(dom.window.document.createElement('div'))
+const divOneOneThree = divOneThree.appendChild(dom.window.document.createElement('div'))
+divOneThree.appendChild(dom.window.document.createElement('div'))
 // eslint-disable-next-line camelcase
-const div_1_1_1_3 = div_1_1_3.appendChild(dom.window.document.createElement('div'))
-div_1_1_3.appendChild(dom.window.document.createElement('div'))
+const divOneOneOneThree = divOneOneThree.appendChild(dom.window.document.createElement('div'))
+divOneOneThree.appendChild(dom.window.document.createElement('div'))
 // eslint-disable-next-line camelcase
-const div_1_1_1_1_3 = div_1_1_1_3.appendChild(dom.window.document.createElement('div'))
+const divOneOneOneOneThree = divOneOneOneThree.appendChild(dom.window.document.createElement('div'))
 // eslint-disable-next-line camelcase
-const div_1_1_1_1_1_3 = div_1_1_1_1_3.appendChild(dom.window.document.createElement('div'))
-div_1_1_1_1_3.appendChild(dom.window.document.createElement('div'))
+const divOneFiveThree = divOneOneOneOneThree.appendChild(dom.window.document.createElement('div'))
+divOneOneOneOneThree.appendChild(dom.window.document.createElement('div'))
 // eslint-disable-next-line camelcase
-const div_1_1_1_1_1_1_3 = div_1_1_1_1_1_3.appendChild(dom.window.document.createElement('div'))
-const section = div_1_1_1_1_1_1_3.appendChild(dom.window.document.createElement('section'))
+const divOneOneOneOneOneThree = divOneFiveThree.appendChild(dom.window.document.createElement('div'))
+const section = divOneOneOneOneOneThree.appendChild(dom.window.document.createElement('section'))
 section.appendChild(dom.window.document.createElement('div'))
-const div122 = section.appendChild(dom.window.document.createElement('div'))
-const finalDiv = div122.appendChild(dom.window.document.createElement('div'))
+const divOneTwoTwo = section.appendChild(dom.window.document.createElement('div'))
+const finalDiv = divOneTwoTwo.appendChild(dom.window.document.createElement('div'))
 
-div122.appendChild(dom.window.document.createElement('div'))
+divOneTwoTwo.appendChild(dom.window.document.createElement('div'))
 const articleDiv = finalDiv.appendChild(dom.window.document.createElement('article'))
 
 // eslint-disable-next-line no-undef
@@ -73,8 +73,13 @@ test('getSkills should return Java Python', () => {
   // eslint-disable-next-line no-undef
   expect(getNer(document.getElementsByTagName('article')[0].textContent)).toBe('java python')
   dom.window.document.body.removeChild(articleDiv)
-  articleDiv.textContent = 'Experience is not required'
+  articleDiv.textContent = 'Position for Software Development. Experience is not required'
   dom.window.document.body.appendChild(articleDiv)
   // eslint-disable-next-line no-undef
   expect(getNer(document.getElementsByTagName('article')[0].textContent)).toBe('')
+  dom.window.document.body.removeChild(articleDiv)
+  articleDiv.textContent = 'Position for Software Development using Golang and knowledge of machine learning. Experience is not required'
+  dom.window.document.body.appendChild(articleDiv)
+  // eslint-disable-next-line no-undef
+  expect(getNer(document.getElementsByTagName('article')[0].textContent)).toBe('go ml')
 })

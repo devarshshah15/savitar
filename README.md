@@ -18,16 +18,29 @@
 
 We all know, how challenging it is to find the job that meets all your expectations and requirements. LinkedIn is one of the largest job portals which connects job seekers to recruiters throughout the globe. There are innumerable jobs in various industries, but in order to find the job based on an individual's requisites, it obligates the need for one, to make seperate searches. In order to identify and tag the specific requirements for targeted searches, we bring to you **Savitar, a Chrome Extension** that helps you summarize a linkedin job posting so you dont have to spend your time reading through job descriptions that may not be relevant to you!
 
+
+<a id="raw-url" href="https://raw.githubusercontent.com/ultraultimated/savitar/master/downloads/savitar.crx">Download Savitar</a>
 ---
 
 ## Table of contents
 - [Project Video](#project-video)
+- [Project Installation](#project-installation)
 - [Project Stages](#project-stages)
 - [License](#license)
 
 # Project Video
 
-[![Savitar pitch](https://img.youtube.com/vi/EbdN5pDlpLA/0.jpg)](https://www.youtube.com/watch?v=EbdN5pDlpLA)
+[![Savitar pitch](https://img.youtube.com/vi/U0bdEmej0_s/0.jpg)](https://youtu.be/U0bdEmej0_s)
+
+# Project Installation
+## Using .crx File
+* Download the extension using the link provided above.
+* Open the extensions tabe in Google Chrome and drag the extension in it to install.
+
+## Unpacked Version 
+* Clone the github repository.
+* Open the extension tab and enable the developer mode using toggle button.
+* Click on 'Load Unpacked Extension'  and select the root directory of extension.   
 
 # Project Stages
 

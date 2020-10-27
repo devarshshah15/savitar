@@ -61,9 +61,7 @@ We all know, how challenging it is to find the job that meets all your expectati
 ## WHY use it
 
 Savitar is a chrome extension for LinkedIn that is targeted to solve the use case of reducing the time job seekers spend time in reading the job requirements.
-In particular, it helps we to find important information from job descriptions such as Job Location, Skills Required, Years of Experience and Sponorship , we can easily use this extension to get the important items easily.
-On an average case people spend one hour daily in simply reading the job descriptions beacuse these critical details are often mixed in a long text or somewhere after a long description on work responsibilities. But if we don't fit in the criteria then the work responsibilities hardly matter to we as we are not elgible for it.
-
+In particular, it helps us to find important information from job descriptions such as Job Location, Skills Required, Years of Experience and Sponorship. We can easily use this extension to get the important items easily. On an average, people spend one hour daily in simply reading the job descriptions beacuse these critical details are often mixed in a long text or somewhere after a long description on work responsibilities. But if we don't fit in the criteria then the work responsibilities hardly matter to we as we are not elgible for it. The other existing extensions provide summary in the form of text. Our extension provides badges like years of experience, skills, location and sponsorship.
 
 
 # Project Stages

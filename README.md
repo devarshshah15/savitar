@@ -42,6 +42,21 @@ We all know, how challenging it is to find the job that meets all your expectati
 * Open the extension tab and enable the developer mode using toggle button.
 * Click on 'Load Unpacked Extension'  and select the root directory of extension.   
 
+## How to setup locally
+* clone the github repository.
+* ```cd Savitar```
+* Run ```npm install```
+* Run ```npm run-script build``` to package the application
+
+## To generate Automated Documentation
+* Run ```npm run-script document```
+
+## To run test cases 
+* Run ```npm test```
+
+## To check for lint errors 
+* Run ```npm run-script lint```
+
 # Project Stages
 
 ## Part 1 Overview

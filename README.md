@@ -25,8 +25,10 @@ We all know, how challenging it is to find the job that meets all your expectati
 ## Table of contents
 - [Project Video](#project-video)
 - [Project Installation](#project-installation)
+- [Experimentation](#experimentation-phase-for-project-3)
 - [Project Stages](#project-stages)
 - [License](#license)
+
 
 # Project Video
 
@@ -62,6 +64,23 @@ We all know, how challenging it is to find the job that meets all your expectati
 
 Savitar is a chrome extension for LinkedIn that is targeted to solve the use case of reducing the time job seekers spend time in reading the job requirements.
 In particular, it helps us to find important information from job descriptions such as Job Location, Skills Required, Years of Experience and Sponorship. We can easily use this extension to get the important items easily. On an average, people spend one hour daily in simply reading the job descriptions beacuse these critical details are often mixed in a long text or somewhere after a long description on work responsibilities. But if we don't fit in the criteria then the work responsibilities hardly matter to we as we are not elgible for it. The other existing extensions provide summary in the form of text. Our extension provides badges like years of experience, skills, location and sponsorship.
+
+# Experimentation phase for project 3
+* The project setup is simple and can be done by downloading the .crx file and loading it into chrome as mentioned above.<br>
+## Job search with Savitar vs without
+* The user will be provided with 20 job descriptions and will be asked to identify 5 relevant jobs. The time taken by the user will be recorded. 
+* Now the user will be asked to perform same task, but by using Savitar and time will be recorded.
+* The time difference will serve as a measure to effectiveness of Savitar
+
+## Needle in a Haystack
+* The user will be provided with a list of 20 job descriptions and there will be on job which will be irrelevant.
+* The task of the user is to identify this job within given time frame.
+* The evaluation will be based on whether the user is able to identify that job within the given time frame.
+
+## Can someone new to the industry identify skills relevant by looking at 20 jobs?
+* The main objective behind this experiment is to identify relevant skills for someone entering the industry.
+* The user will be provided with a list of 20 job description and the user has to find top 5 most in-demand skills.
+* The evaluation will be done based on whether the user was able to identify relevant skills.
 
 
 # Project Stages
